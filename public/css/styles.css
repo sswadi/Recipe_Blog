@@ -39,6 +39,11 @@ a {
     border-radius: 8px;
 }
 
+
+.category__img--large{
+    height: 330px;
+} 
+
 .category__img img{
     width: 100%;
     object-fit: cover;
