@@ -19,41 +19,18 @@
 <!-- //Category Start -->
 
 <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
-    <a href="#" class="col text-center category__link">
-        <div class="category__img shadow">
-            <img src="img/2.jpg" alt="Indian Food" loading="lazy">
-        </div>
-        <div class="pt-1">Indian Food</div>
-    </a>
 
-    <a href="#" class="col text-center category__link">
-        <div class="category__img shadow">
-            <img src="img/2.jpg" alt="Indian Food" loading="lazy">
-        </div>
-        <div class="pt-1">Indian Food</div>
-    </a>
-
-    <a href="#" class="col text-center category__link">
-        <div class="category__img shadow">
-            <img src="img/2.jpg" alt="Indian Food" loading="lazy">
-        </div>
-        <div class="pt-1">Indian Food</div>
-    </a>
-
-    <a href="#" class="col text-center category__link">
-        <div class="category__img shadow">
-            <img src="img/2.jpg" alt="Indian Food" loading="lazy">
-        </div>
-        <div class="pt-1">Indian Food</div>
-    </a>
-
-    <a href="#" class="col text-center category__link">
-        <div class="category__img shadow">
-            <img src="img/2.jpg" alt="Indian Food" loading="lazy">
-        </div>
-        <div class="pt-1">Indian Food</div>
-    </a>
-
+    <% if(categories != '') { %>
+        <% categories.forEach(function(category, index) { %>
+          <a href="#" class="col text-center category__link">
+            <div class="category__img shadow">
+              <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+            </div>
+            <div class="pt-1"><%- category.name %></div>
+          </a>
+        <% }) %>
+    <% } %>
+   
     <a href="#" class="col text-center category__link">
         <div class="category__img shadow">
             <img src="img/viewMore13.gif" alt="View All Categories" loading="lazy">

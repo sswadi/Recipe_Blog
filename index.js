@@ -2,7 +2,7 @@ const express = require('express'); //express server
 const expressLayouts = require('express-ejs-layouts'); //express layouts helps in creating different layouts for diff scenarios
 
 const app = express(); //new express application
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 require('dotenv').config(); //used for storing DB details; dotenv loads environment variables from .env file
 
