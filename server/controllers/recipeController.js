@@ -5,12 +5,9 @@ const Category = require('../models/Category');
 
 exports.homepage = async(req, res) => {
 
-    try{
-
-        const limitNumber = 3;
+    try{    
+        const limitNumber = 5;
         const categories = await Category.find({}).limit(limitNumber);
-
-        console.log("****", categories);
 
         res.render('index', {
             title : 'Cooking Blog - Home',

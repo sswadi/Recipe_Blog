@@ -4,12 +4,12 @@ const categorySchema = new mongoose.Schema({
 
     name: {
         type: String,
-        required: 'This field is required.'
+        required: true
     },
 
     image: {
         type: String,
-        required: 'This field is required.'
+        required: true
     }
 });
 

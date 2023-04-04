@@ -4,12 +4,12 @@ const recipeSchema = new mongoose.Schema({
 
     name: {
         type: String,
-        required: 'This field is required.'
+        required: true
     },
 
     description: {
         type: String,
-        required: 'This field is required.'
+        required: true
     }
 });
 
