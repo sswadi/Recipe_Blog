@@ -52,7 +52,7 @@ exports.exploreCategoriesById = async(req, res) => {
         
         let categoryId = req.params.id;
         const limitNumber = 20;
-        const categoryById = await Category.find({'category': categoryId}).limit(limitNumber);
+        const categoryById = await Recipe.find({'category': categoryId}).limit(limitNumber);
         res.render('categories', {
             title : 'Cooking Blog - Categories',
             categoryById
@@ -80,11 +80,77 @@ exports.exploreRecipe = async(req, res) => {
     }
 }
 
+// Search page --> POST /search
+
+exports.searchRecipe = async(req, res) => {
+
+    //searchTerm
+
+    try{
+        let searchTerm = req.body.searchTerm;
+
+        let recipe = await Recipe.find({$text: {$search: searchTerm, $diacriticSensitive: true}});
+
+        res.render('search', {
+            title : 'Cooking Blog - Search',
+            recipe
+        });
+
+    }catch(error){
+        res.status(500).send({message: error.message || "Error Occured"});
+    }
+}
+
+
+// GET ---> /explore-latest
+
+exports.exploreLatest = async(req, res) => {
+    try{   
+        
+        const limitNumber = 20;
+        const recipe = await Recipe.find({}).sort({ _id: -1 }).limit(limitNumber);
+        res.render('explore-latest', {
+            title : 'Cooking Blog - Explore Latest',
+            recipe
+        });
+
+    }catch(error){
+        res.status(500).send({message: error.message || "Error Occured"});
+    }
+}
 
 
 
+// GET ---> /explore-random
+//Explore Random as JSON
+
+exports.exploreRandom = async(req, res) => {
+    try{   
+        
+        let count = await Recipe.find().countDocuments();
+        let random = Math.floor(Math.random() * count);
+
+        let recipe = await Recipe.findOne().skip(random).exec();
+       
+        res.render('explore-random', {
+            title : 'Cooking Blog - Explore Latest',
+            recipe
+        });
+
+    }catch(error){
+        res.status(500).send({message: error.message || "Error Occured"});
+    }
+}
 
 
+// GET ---> /submit-recipe
+
+exports.submitRecipe = async(req, res) => {
+
+    res.render('submit-recipe', {
+        title : 'Cooking Blog - Submit Recipe'
+    });
+}
 
 
 
