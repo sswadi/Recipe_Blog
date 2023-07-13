@@ -48,3 +48,119 @@ a {
     width: 100%;
     object-fit: cover;
 }
+
+
+/*-------------------------------ABOUT--- */
+
+
+/* Reset default browser styles */
+/* body, figure, h1, h2, h3, h4, h5, h6, p, ul, ol {
+    margin: 0;
+    padding: 0;
+  } */
+  
+  /* body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+  }
+  
+  main {
+    padding: 20px;
+  } */
+  
+  .about-section {
+    margin-bottom: 20px;
+  }
+  
+  .team-section {
+    margin-top: 40px;
+  }
+  
+  .team-member {
+    display: inline-block;
+    margin-right: 30px;
+    text-align: center;
+  }
+  
+  .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .team-section> h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .team-section> h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .team-section> h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .team-section> p {
+    margin-bottom: 10px;
+  }
+  
+
+
+  /* ------------------CONTACT----------------*/
+
+  /* Reset default browser styles */
+/* body, figure, h1, h2, h3, h4, h5, h6, p, ul, ol, form {
+  margin: 0;
+  padding: 0;
+} */
+
+/* body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  padding: 20px;
+} */
+
+.contact-section {
+  margin-bottom: 20px;
+}
+
+
+.contact-section > form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.contact-section > label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-section > input,
+textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-section > button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-section > button:hover {
+  background-color: #555;
+}

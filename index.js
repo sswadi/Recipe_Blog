@@ -11,7 +11,7 @@ const port = process.env.PORT || 8000;
 require('dotenv').config(); //used for storing DB details; dotenv loads environment variables from .env file
 
 //middlewares
-app.use(express.urlencoded( {extended: true} )); //this helps in parsing url encoded bodies to Strings/Arrays
+app.use(express.urlencoded( {extended: true} )); //this helps in parsing url encoded bodies to Strings/Arrays-
 app.use(express.static('public')); //to fetch images,scripts, stylesheets we only have to give relative path
 app.use(expressLayouts);
 
@@ -31,10 +31,9 @@ app.set('view engine', 'ejs');
 const routes = require('./server/routes/recipeRoutes.js');
 app.use('/', routes);
 
+app.get('/');
+
 app.listen(port, ()=> console.log(`Listening to port ${port}`));
-
-
-
 
 
 
