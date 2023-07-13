@@ -81,25 +81,6 @@ exports.exploreCategoriesById = async(req, res) => {
 
 
 // Individual recipe page --> GET /recipe/:id
-// exports.exploreRecipe = async(req, res) => {
-//     // try{   
-        
-//         let recipeId = req.params.id;
-//         // console.log(recipeId);
-//         console.log("*****");
-//         const recipe = await Recipe.findById({recipeId}).exec();
-//         // console.log(recipe._id);
-//     //     res.render('recipe', {
-//     //         title : 'Cooking Blog - Recipe',
-//     //         recipe
-//     //     });
-
-//     // }catch(error){
-//     //     res.status(500).send({message: error.message || "Error Occured"});
-//     // }
-// }
-
-//TEMP: DELETE IT LATER
 exports.exploreRecipe = async(req, res) => {
     try{   
         
